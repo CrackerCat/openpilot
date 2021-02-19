@@ -3,11 +3,17 @@ import random
 from cereal import log
 from selfdrive.hardware.base import HardwareBase
 
-NetworkType = log.ThermalData.NetworkType
-NetworkStrength = log.ThermalData.NetworkStrength
+NetworkType = log.DeviceState.NetworkType
+NetworkStrength = log.DeviceState.NetworkStrength
 
 
 class Pc(HardwareBase):
+  def get_os_version(self):
+    return None
+
+  def get_device_type(self):
+    return "pc"
+
   def get_sound_card_online(self):
     return True
 
